@@ -16,7 +16,8 @@ def time_in_sec(time):
 
     # convert time to seconds
     # [2] is sec + [1] min*60 + [0] hrs*60*60
-    time_in_seconds = (total_time[2]) + (total_time[1] * 60) + (total_time[0] * (60 * 60))
+    time_in_seconds = (total_time[2]) + (total_time[1]
+                                         * 60) + (total_time[0] * (60 * 60))
     return time_in_seconds
 
 
@@ -37,22 +38,25 @@ def countdown(time, title):
         seconds = time % 60
         return "%i H, %i Min and %i Sec" % (hours, minutes, seconds)
 
-
-
     # function to quit pygame timer on key in event
     def quit_timer():
         events = pygame.event.get()
         for event in events:
-            if event.type == pygame.QUIT or (event.type == pygame.KEYDOWN and event.key == pygame.K_ESCAPE):
+            if event.type == pygame.QUIT:
                 pygame.quit()
                 print "Timer terminated."
+                quit()
+            elif event.type == pygame.KEYDOWN and event.key == pygame.K_ESCAPE:
+                pygame.quit()
+                print "Timer stopped"
                 quit()
 
     # running the Timer
     while total_time_in_seconds > 0:
         quit_timer()
         if total_time_in_seconds <= 30:
-            timer_dsp.fill((255, 4.25 * total_time_in_seconds, 4.25 * total_time_in_seconds))
+            timer_dsp.fill((255, 4.25 * total_time_in_seconds,
+                            4.25 * total_time_in_seconds))
         else:
             timer_dsp.fill((255, 255, 255))
         string = countdown_time(total_time_in_seconds)
@@ -69,4 +73,4 @@ def countdown(time, title):
     pygame.quit()
 
 
-countdown("00:01:15", "Cycle 1")
+# countdown("00:01:15", "Cycle 1")
