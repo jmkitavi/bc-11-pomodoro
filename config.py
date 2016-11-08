@@ -12,7 +12,8 @@ def set_time():
 
 # set short breaks
 def short_break_settings():
-    short_break = raw_input("Enter time for short break as HH:MM:SS").split(':')
+    short_break = raw_input(
+        "Enter time for short break as HH:MM:SS").split(':')
     try:
         for i in [0, 1, 2]:     # check/get all 3 fields if present h:m:s
             short_break[i] = int(short_break[i])
@@ -48,4 +49,3 @@ def sound_settings():
         print "Wrong input"
         sound_settings()
     return sound
-
