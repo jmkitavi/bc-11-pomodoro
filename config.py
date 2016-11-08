@@ -1,4 +1,4 @@
-#set task time
+#task time settings
 def set_time():
     task_duration = raw_input("Enter time for task as HH:MM:SS").split(':')
     try:
@@ -9,7 +9,7 @@ def set_time():
         print "The Input wasn't Valid!"
         set_time()
 
-#set short breaks
+#short break settings
 def shortbreak_settings():
     short_break = raw_input("Enter time for short break as HH:MM:SS").split(':')
     try:
