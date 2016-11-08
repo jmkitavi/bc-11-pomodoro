@@ -1,3 +1,4 @@
+# #!/usr/bin/env python
 import time
 import datetime
 import config
@@ -5,12 +6,13 @@ import countdown_timer
 
 
 def new_task(task_name):
-    x = raw_input("Press [Enter] to begin the countdown with default settings or 1 to configure!\n")
+    x = raw_input(
+        "Press [Enter] to begin the countdown with default settings or 1 to configure!\n")
     if x == "1":
         print "Configuring options for timer :"
         task_time = config.set_time()
         short_break = config.short_break_settings()
-        long_break = config.long_breakreak_settings()
+        long_break = config.long_break_settings()
         sound = config.sound_settings()
     else:
         print "Using default settings :"
@@ -19,9 +21,8 @@ def new_task(task_name):
         long_break = "00:00:06"
         sound = True
 
-
-    # x = time.time()
-    # time_stamp = str(datetime.datetime.fromtimestamp(x).strftime('%Y:%m:%d'))
+    t = time.time()
+    time_stamp = str(datetime.datetime.fromtimestamp(t).strftime('%Y:%m:%d'))
 
     task_length = raw_input("Enter expected total task duration in HH:MM:SS :")
 
@@ -29,7 +30,8 @@ def new_task(task_name):
         if countdown_timer.time_in_sec(tasks_length) < countdown_timer.time_in_sec(tasks_time):
             no_of_cycles = 1
         else:
-            no_of_cycles = countdown_timer.time_in_sec(task_length) / countdown_timer.time_in_sec(task_time)
+            no_of_cycles = countdown_timer.time_in_sec(
+                task_length) / countdown_timer.time_in_sec(task_time)
         return no_of_cycles
 
     cycles = cycles(task_length, task_time)
@@ -58,5 +60,3 @@ def new_task(task_name):
         x += 1
 
 new_task(" Task")
-
-    
