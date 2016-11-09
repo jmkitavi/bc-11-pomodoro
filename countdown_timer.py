@@ -43,11 +43,11 @@ def countdown(time, title):
         events = pygame.event.get()
         for event in events:
             if event.type == pygame.QUIT:
-                pygame.quit()
+                # pygame.quit()
                 print "Timer terminated."
                 quit()
             elif event.type == pygame.KEYDOWN and event.key == pygame.K_ESCAPE:
-                pygame.quit()
+                # pygame.quit()
                 print "Timer stopped"
                 quit()
 

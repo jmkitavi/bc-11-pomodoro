@@ -3,7 +3,7 @@ import time
 import datetime
 import config
 import countdown_timer
-
+import sql_file
 
 def new_task(task_name):
     x = raw_input(
@@ -27,8 +27,9 @@ def new_task(task_name):
 
     # take input for task length
     tasks_length = config.task_length_settings()
+    print "Total time " + tasks_length
 
-    def cycles(tasks_length, tasks_time):
+    def cycle(tasks_length, tasks_time):
         if countdown_timer.time_in_sec(tasks_length) < countdown_timer.time_in_sec(tasks_time):
             no_of_cycles = 1
         else:
@@ -36,7 +37,11 @@ def new_task(task_name):
                 tasks_length) / countdown_timer.time_in_sec(task_time)
         return no_of_cycles
 
-    cycles = cycles(tasks_length, task_time)
+    cycles = cycle(tasks_length, task_time)
+    print "Task cycle time  " + task_time
+    print "No. of cycles " + str(cycles + 1)
+
+    sql_file.input_data(task_name, time_stamp, tasks_length, cycles+1, short_break, long_break, sound)
 
     x = 0
     break_status = ''
@@ -61,4 +66,4 @@ def new_task(task_name):
         countdown_timer.countdown(long_break, "long break")
         x += 1
 
-new_task(" Task")
+# new_task(" Task")
