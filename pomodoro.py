@@ -12,7 +12,7 @@ Usage:
     pomodoro clear
     pomodoro (-i | --interactive)
     pomodoro (-h | --help | --version)
-    pomodoro quit
+    pomodoro exit
 
 Options:
     -i, --interactive  Interactive Mode
@@ -82,8 +82,8 @@ Usage:
     pomodoro delete_all
     pomodoro config <command>       eg. short_break, long_break, sound
     pomodoro (-i | --interactive)
-    pomodoro (-h | --help | --version)
-    pomodoro quit
+    pomodoro (-h | --help)
+    pomodoro exit
 
 Options:
     -i, --interactive  Interactive Mode
@@ -92,8 +92,8 @@ Options:
     prompt = 'pomodoro '
     file = None
 
-    def do_quit(self, arg):
-        """Usage: quit"""
+    def do_exit(self, arg):
+        """Usage: exit"""
         print('Adios! Get yourself some soup')
         exit()
 
@@ -121,16 +121,6 @@ Options:
             long_break_db()
         elif args['<command>'] == 'sound':
             sound_db()
-
-    # @docopt_cmd
-    # def do_delete_all(self, arg):
-    #     """Usage: delete_all"""
-    #     delete_all()
-    #
-    # @docopt_cmd
-    # def do_stop_counter(self, arg):
-    #     """Usage: stop"""
-    #     stop_task()
 
 
 opt = docopt(__doc__, sys.argv[1:])
