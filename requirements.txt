@@ -1,0 +1,5 @@
+pygame
+prettytable
+pyfiglet
+docopt
+termcolor

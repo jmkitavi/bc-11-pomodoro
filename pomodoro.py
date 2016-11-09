@@ -83,6 +83,7 @@ Usage:
     pomodoro config <command>       eg. short_break, long_break, sound
     pomodoro (-i | --interactive)
     pomodoro (-h | --help | --version)
+    pomodoro quit
 
 Options:
     -i, --interactive  Interactive Mode
@@ -91,11 +92,10 @@ Options:
     prompt = 'pomodoro '
     file = None
 
-    # def do_quit(self, arg):
-    #     """Usage: quit"""
-    #
-    #     print('Good Bye!')
-    #     exit()
+    def do_quit(self, arg):
+        """Usage: quit"""
+        print('Adios! Get yourself some soup')
+        exit()
 
     @docopt_cmd
     def do_start(self, arg):
