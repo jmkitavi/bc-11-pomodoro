@@ -3,7 +3,7 @@
 
 
 def set_time():
-    td = raw_input("Enter time for task as HH:MM:SS : >")
+    td = raw_input("Enter time for cycles as HH:MM:SS : >")
     task_duration = td.split(':')
     try:
         for i in [0, 1, 2]:     # check if all 3 fields are present h:m:s
@@ -59,7 +59,7 @@ def sound_settings():
 
 # task length
 def task_length_settings():
-    task_length = raw_input("Enter time for long break as HH:MM:SS : >")
+    task_length = raw_input("Enter total time for task as HH:MM:SS : >")
     tl = task_length.split(':')
     try:
         for i in [0, 1, 2]:  # check if all 3 fields are present h:m:s
