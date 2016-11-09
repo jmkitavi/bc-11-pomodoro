@@ -24,17 +24,19 @@ def new_task(task_name):
     t = time.time()
     time_stamp = str(datetime.datetime.fromtimestamp(t).strftime('%Y:%m:%d'))
 
-    task_length = raw_input("Enter expected total task duration in HH:MM:SS :")
+
+    # take input for task length
+    tasks_length = config.task_length_settings()
 
     def cycles(tasks_length, tasks_time):
         if countdown_timer.time_in_sec(tasks_length) < countdown_timer.time_in_sec(tasks_time):
             no_of_cycles = 1
         else:
             no_of_cycles = countdown_timer.time_in_sec(
-                task_length) / countdown_timer.time_in_sec(task_time)
+                tasks_length) / countdown_timer.time_in_sec(task_time)
         return no_of_cycles
 
-    cycles = cycles(task_length, task_time)
+    cycles = cycles(tasks_length, task_time)
 
     x = 0
     break_status = ''
