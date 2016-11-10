@@ -58,14 +58,16 @@ def new_task(task_name):
             x += 1
             status = countdown_timer.countdown(task_time, task_name)
             if sound == True:
-                tone.tone()
+                tone.tone1()
             countdown_timer.countdown(short_break, "short break")
+            tone.tone2()
             count -= 1
             x += 1
         countdown_timer.countdown(task_time, task_name)
         if sound == True:
-            tone.tone()
+            tone.tone1()
         countdown_timer.countdown(long_break, "long break")
+        tone.tone2()
 
         x += 1
 
