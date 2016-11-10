@@ -106,8 +106,8 @@ Options:
             new_task(arg['<task-title>'])
         except KeyboardInterrupt:
             pygame.quit()
-            # print "\nTask complete"
-            print "\n"
+            print "\nTask complete"
+            # print "\n"
 
     @docopt_cmd
     def do_list(self, arg):

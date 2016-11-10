@@ -31,15 +31,6 @@ def input_data(task_name, time_stamp, cycle_time, cycles, shortb, longb, sound):
     conn.commit()
     c.close()
 
-    # while True:
-    #     conn = sqlite3.connect('user.db', timeout=1)
-    #     c = conn.cursor()
-    #     try:
-    #         c.execute("INSERT INTO Pomodoro (taskname , timestamp, totaltime, cycles, shortb, longb, sound) VALUES (?,?,?,?,?,?,?)",
-    #             (task_name, time_stamp, cycle_time, cycles, shortb, longb, sound))
-    #     except sqlite3.OperationalError:
-    #         print("database locked")
-
 
 # function to delete all tasks
 def delete_all_task():
@@ -48,15 +39,8 @@ def delete_all_task():
     c.execute("""DELETE from Pomodoro""")
     conn.commit()
     c.close()
-# delete_all_task()
-#     while True:
-#         conn = sqlite3.connect('pomodoro.db', timeout=1)
-#         c = conn.cursor()
-#         try:
-#             c.execute("""DELETE from Pomodoro""")
-#         except sqlite3.OperationalError:
-#             print("database locked")
-# delete_all_task()
+
+
 # function to select tasks of certain day
 def list_day(time_stamp):
     conn = sqlite3.connect('pomodoro.db')
@@ -135,3 +119,5 @@ def sound_db():
 
 # list_all()
 # create_table()
+
+# def 
