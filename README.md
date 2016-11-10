@@ -11,12 +11,13 @@ All times can be edited
 ## Installation
 
 To run the app install and initialize virtual environment.
+
 	clone repository
 	`git clone https://github.com/sirjmkitavi/bc-11-pomodoro`
 
 	cd into the directory
 	`cd bc-11-pomodoro`
-	
+
 	Run pip install to install requirements
 	`pip install -r requirements.txt`
 
