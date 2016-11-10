@@ -39,17 +39,17 @@ def countdown(time, title):
         return "%i H, %i Min and %i Sec" % (hours, minutes, seconds)
 
     # function to quit pygame timer on key in event
-    def quit_timer():
-        events = pygame.event.get()
-        for event in events:
-            if event.type == pygame.QUIT:
-                # pygame.quit()
-                print "Timer terminated."
-                quit()
-            elif event.type == pygame.KEYDOWN and event.key == pygame.K_ESCAPE:
-                # pygame.quit()
-                print "Timer stopped"
-                quit()
+    # def quit_timer():
+    #     events = pygame.event.get()
+    #     for event in events:
+    #         if event.type == pygame.QUIT:
+    #             # pygame.quit()
+    #             print "Timer terminated."
+    #             quit()
+    #         elif event.type == pygame.KEYDOWN and event.key == pygame.K_ESCAPE:
+    #             # pygame.quit()
+    #             print "Timer stopped"
+    #             quit()
 
     # running the Timer
     while total_time_in_seconds > 0:

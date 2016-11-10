@@ -8,7 +8,7 @@ Usage:
     pomodoro time <HH:MM:SS>
     pomodoro list <date>
     pomodoro list_all
-    pomodoro config short_break
+    pomodoro config short_break | long_break | sound
     pomodoro clear
     pomodoro (-i | --interactive)
     pomodoro (-h | --help | --version)
@@ -32,6 +32,8 @@ import datetime
 import sqlite3
 import time
 from pyfiglet import Figlet, figlet_format
+import countdown_timer
+import pygame
 
 # creates database and cursor
 # conn = sqlite3.connect('pomodoro.db')
@@ -100,7 +102,12 @@ Options:
     @docopt_cmd
     def do_start(self, arg):
         """Usage: start <task-title>"""
-        new_task(arg['<task-title>'])
+        try:
+            new_task(arg['<task-title>'])
+        except KeyboardInterrupt:
+            pygame.quit()
+            # print "\nTask complete"
+            pass
 
     @docopt_cmd
     def do_list(self, arg):
@@ -122,10 +129,19 @@ Options:
         elif args['<command>'] == 'sound':
             sound_db()
 
+    @docopt_cmd
+    def do_delete_all(self):
+        """Usage: delete_all"""
+        delete_all_task()
+
 
 opt = docopt(__doc__, sys.argv[1:])
 
 if opt['--interactive']:
-    MyInteractive().cmdloop()
+    try:
+        MyInteractive().cmdloop()
+    except KeyboardInterrupt:
+        print "\n"
+        pass
 
-print(opt)
+# print(opt)
