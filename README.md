@@ -27,11 +27,16 @@ Run Pomodoro timer `python pomodoro.py -i`
 commands include:
 
      pomodoro start <task-title> to create new task for the timer 
-    eg.	`pomodoro start presentations` 
+     `pomodoro start presentations` 
      
      pomodoro config short_break to modify the default short break time 
      `pomodoro config short_break`
 
 
 ### To do List
+
 	Working on `pomodoro stop`
+
+### Issues
+
+Python Module `pygame` has support issues in latest MACs, still working on how to solve that
