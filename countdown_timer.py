@@ -53,7 +53,7 @@ def countdown(time, title):
 
     # running the Timer
     while total_time_in_seconds > 0:
-        quit_timer()
+        # quit_timer()
         if total_time_in_seconds <= 30:
             timer_dsp.fill((255, 4.25 * total_time_in_seconds,
                             4.25 * total_time_in_seconds))
