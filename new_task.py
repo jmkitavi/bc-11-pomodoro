@@ -6,6 +6,13 @@ import countdown_timer
 import sql_file
 import tone
 
+def cycle(tasks_length, tasks_time):
+    if countdown_timer.time_in_sec(tasks_length) < countdown_timer.time_in_sec(tasks_time):
+        no_of_cycles = 1
+    else:
+        no_of_cycles = countdown_timer.time_in_sec(
+            tasks_length) / countdown_timer.time_in_sec(tasks_time)
+    return no_of_cycles
 
 def new_task(task_name):
     x = raw_input(
@@ -32,14 +39,7 @@ def new_task(task_name):
     print "Total time       :" + tasks_length
     print "Task cycle time  :" + task_time
 
-    def cycle(tasks_length, tasks_time):
-        if countdown_timer.time_in_sec(tasks_length) < countdown_timer.time_in_sec(tasks_time):
-            no_of_cycles = 1
-        else:
-            no_of_cycles = countdown_timer.time_in_sec(
-                tasks_length) / countdown_timer.time_in_sec(task_time)
-        return no_of_cycles
-
+    # no. of cycles
     cycles = cycle(tasks_length, task_time)
     print "No. of cycles    :" + str(cycles + 1)
 
@@ -57,21 +57,11 @@ def new_task(task_name):
         while count > 0 and cycles > x:
             x += 1
             status = countdown_timer.countdown(task_time, task_name)
-            if status == 'stopped':
-                break_status = 'stopped'
-                break
-            else:
-                pass
-
             if sound == True:
                 tone.tone()
             countdown_timer.countdown(short_break, "short break")
             count -= 1
             x += 1
-        if break_status == 'stopped':
-            break
-        else:
-            pass
         countdown_timer.countdown(task_time, task_name)
         if sound == True:
             tone.tone()

@@ -21,8 +21,8 @@ Options:
 Note:
     use interactive for best perfomance
 """
-from new_task import *
-from sql_file import *
+from new_task import new_task
+from sql_file import list_day, list_all, short_break_db, long_break_db, sound_db, delete_all_task
 from termcolor import cprint
 import sys
 import os
@@ -96,7 +96,7 @@ Options:
 
     def do_exit(self, arg):
         """Usage: exit"""
-        print('Adios! Get yourself some soup')
+        print('Good Bye!')
         exit()
 
     @docopt_cmd
@@ -107,7 +107,7 @@ Options:
         except KeyboardInterrupt:
             pygame.quit()
             # print "\nTask complete"
-            pass
+            print "\n"
 
     @docopt_cmd
     def do_list(self, arg):
@@ -142,6 +142,5 @@ if opt['--interactive']:
         MyInteractive().cmdloop()
     except KeyboardInterrupt:
         print "\n"
-        pass
 
 # print(opt)
