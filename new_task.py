@@ -36,7 +36,7 @@ def new_task(task_name):
     time_stamp = str(datetime.datetime.fromtimestamp(t).strftime('%Y:%m:%d'))
 
     # take input for task length
-    print "Total time       :" + tasks_length
+    print "Total time       :" + str(tasks_length)
     print "Task cycle time  :" + task_time
 
     # no. of cycles

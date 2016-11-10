@@ -1,7 +1,4 @@
-# #!/usr/bin/env python
-# set task time
-
-
+# cycle time settings
 def set_time():
     td = raw_input("Enter time for cycles as HH:MM:SS : >")
     task_duration = td.split(':')
@@ -14,7 +11,7 @@ def set_time():
         set_time()
 
 
-# set short breaks
+# long break settings
 def short_break_settings():
     short_break = raw_input("Enter time for short break as HH:MM:SS : >")
     sb = short_break.split(':')
@@ -26,9 +23,8 @@ def short_break_settings():
         print "The Input wasn't Valid!"
         short_break_settings()
 
+
 # long break settings
-
-
 def long_break_settings():
     long_break = raw_input("Enter time for long break as HH:MM:SS : >")
     lb = long_break.split(':')
@@ -57,7 +53,7 @@ def sound_settings():
     return sound
 
 
-# task length
+# total task length
 def task_length_settings():
     task_length = raw_input("Enter total time for task as HH:MM:SS : >")
     tl = task_length.split(':')

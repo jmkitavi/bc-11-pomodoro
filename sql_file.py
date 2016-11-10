@@ -22,6 +22,7 @@ def create_table():
     c.close()
 # create_table()
 
+
 # function to input data to table
 def input_data(task_name, time_stamp, cycle_time, cycles, shortb, longb, sound):
     conn = sqlite3.connect('pomodoro.db')
@@ -36,7 +37,7 @@ def input_data(task_name, time_stamp, cycle_time, cycles, shortb, longb, sound):
 def delete_all_task():
     conn = sqlite3.connect('pomodoro.db')
     c = conn.cursor()
-    c.execute("""DELETE from Pomodoro""")
+    c.execute("DELETE from Pomodoro")
     conn.commit()
     c.close()
 
@@ -45,7 +46,7 @@ def delete_all_task():
 def list_day(time_stamp):
     conn = sqlite3.connect('pomodoro.db')
     c = conn.cursor()
-    c.execute("""SELECT * FROM Pomodoro WHERE timestamp = ?;""", (time_stamp,))
+    c.execute("SELECT * FROM Pomodoro WHERE timestamp = ?;", (time_stamp,))
     data = c.fetchall()
     print "Tasks for: " + time_stamp
     t = table(['Task id', 'Taskname', 'Date', 'Total time', 'Cycles'])
@@ -88,7 +89,7 @@ def short_break_db():
     y = config.short_break_settings()
     conn = sqlite3.connect('pomodoro.db')
     c = conn.cursor()
-    c.execute("UPDATE Pomodoro SET shortb = '%s' WHERE id='%s'"%(y, x))
+    c.execute("UPDATE Pomodoro SET shortb = '%s' WHERE id='%s'" % (y, x))
     conn.commit()
     c.close()
 # short_break_db()
@@ -119,5 +120,3 @@ def sound_db():
 
 # list_all()
 # create_table()
-
-# def 

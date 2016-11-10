@@ -29,8 +29,23 @@ commands include:
      pomodoro start <task-title> to create new task for the timer 
      `pomodoro start presentations` 
      
-     pomodoro config short_break to modify the default short break time 
+     pomodoro config short_break to modify the short break time 
      `pomodoro config short_break`
+
+     pomodoro config long_break to modify the break time
+     `pomodoro config long_break`
+
+     pomodoro config sound to modify sound settings
+     `pomodoro config sound`
+
+     pomodoro list <date> to list tasks of certain day
+     `pomodoro list 2016:11:09`
+
+     pomodoro list_all to list all tasks in database
+     `pomodoro list_all`
+
+     pomodoro delete_all to delete all tasks in database
+     `pomodoro delete_all`
 
 
 ### To do List
@@ -39,4 +54,4 @@ commands include:
 
 ### Issues
 
-Python Module `pygame` has support issues in latest MACs, still working on how to solve that
+Python Module `pygame` has support issues in latest MACs, still working on how to solve that. Suggestions are welcome.

@@ -139,6 +139,7 @@ opt = docopt(__doc__, sys.argv[1:])
 
 if opt['--interactive']:
     try:
+        # print (__doc__)
         MyInteractive().cmdloop()
     except KeyboardInterrupt:
         print "\n"
