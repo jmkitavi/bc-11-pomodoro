@@ -21,6 +21,8 @@ To run the app install and initialize virtual environment.
 	Run pip install to install requirements
 	`pip install -r requirements.txt`
 
+Uses cvlc - command line vlc to run play the alrm tones and pygame to display countdown timer
+
 ## Usage
 
 Run Pomodoro timer `python pomodoro.py -i`
