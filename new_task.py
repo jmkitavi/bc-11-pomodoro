@@ -5,6 +5,8 @@ import config
 import countdown_timer
 import sql_file
 import tone
+from termcolor import cprint, colored
+
 
 def cycle(tasks_length, tasks_time):
     if countdown_timer.time_in_sec(tasks_length) < countdown_timer.time_in_sec(tasks_time):
@@ -15,17 +17,16 @@ def cycle(tasks_length, tasks_time):
     return no_of_cycles
 
 def new_task(task_name):
-    x = raw_input(
-        "Press [Enter] to begin the countdown with default settings or 1 to configure!\n")
+    x = raw_input("Press [Enter] to begin the countdown with default settings or 1 to configure!\n")
     if x == "1":
-        print "Configuring options for timer :"
+        print colored('Configuring options for timer :','blue')
         tasks_length = config.task_length_settings()
         task_time = config.set_time()
         short_break = config.short_break_settings()
         long_break = config.long_break_settings()
         sound = config.sound_settings()
     else:
-        print "Using default settings :"
+        print colored('Using default settings :','yellow')
         tasks_length = "00:01:00"
         task_time = "00:00:07"
         short_break = "00:00:05"
@@ -36,16 +37,16 @@ def new_task(task_name):
     time_stamp = str(datetime.datetime.fromtimestamp(t).strftime('%Y:%m:%d'))
 
     # take input for task length
-    print "Total time       :" + str(tasks_length)
-    print "Task cycle time  :" + task_time
+    print colored('Total time       :   ','magenta') + str(tasks_length)
+    print colored('Task cycle time  :   ','magenta') + task_time
 
     # no. of cycles
     cycles = cycle(tasks_length, task_time)
-    print "No. of cycles    :" + str(cycles + 1)
+    print colored('No. of cycles    :   ','magenta') + str(cycles + 1)
 
-    print "Short break      :" + short_break
-    print "Long break       :" + long_break
-    print "Sound            :" + str(sound)
+    print colored('Short break      :   ','magenta') + short_break
+    print colored('Long break       :   ','magenta') + long_break
+    print colored('Sound            :   ','magenta') + str(sound)
 
     sql_file.input_data(task_name, time_stamp, tasks_length,
                         cycles + 1, short_break, long_break, sound)
