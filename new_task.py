@@ -19,7 +19,7 @@ def cycle(tasks_length, tasks_time):
 def new_task(task_name):
     x = raw_input("Press [Enter] to begin the countdown with default settings or 1 to configure!\n")
     if x == "1":
-        print colored('Configuring options for timer :','blue')
+        print colored('Configuring options for timer :','yellow')
         tasks_length = config.task_length_settings()
         task_time = config.set_time()
         short_break = config.short_break_settings()

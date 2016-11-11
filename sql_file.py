@@ -1,6 +1,7 @@
 import sqlite3
 import config
 from prettytable import PrettyTable as table
+from termcolor import colored
 
 
 # function to create database
@@ -48,7 +49,7 @@ def list_day(time_stamp):
     c = conn.cursor()
     c.execute("SELECT * FROM Pomodoro WHERE timestamp = ?;", (time_stamp,))
     data = c.fetchall()
-    print "Tasks for: " + time_stamp
+    print colored('Tasks for: ' + time_stamp, 'yellow')
     t = table(['Task id', 'Taskname', 'Date', 'Total time', 'Cycles'])
     for row in data:
         id = str(row[0])
@@ -69,7 +70,7 @@ def list_all():
     c = conn.cursor()
     c.execute("""SELECT * FROM Pomodoro""")
     data = c.fetchall()
-    print "All Tasks"
+    print colored('All Tasks','yellow')
     t = table(['Task id', 'Taskname', 'Date', 'Total time', 'Cycles'])
     for row in data:
         id = str(row[0])
