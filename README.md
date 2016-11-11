@@ -53,6 +53,7 @@ commands include:
 ### To do List
 
 	Working on `pomodoro stop`
+     and `pomodoro run` to run currently configured apps from database
 
 ### Issues
 
