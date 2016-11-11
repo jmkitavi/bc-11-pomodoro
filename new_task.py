@@ -25,12 +25,20 @@ def new_task(task_name):
         short_break = config.short_break_settings()
         long_break = config.long_break_settings()
         sound = config.sound_settings()
-    else:
+    elif x =='':
         print colored('Using default settings :','yellow')
         tasks_length = "00:01:00"
-        task_time = "00:00:07"
+        task_time = "00:00:15"
         short_break = "00:00:05"
-        long_break = "00:00:06"
+        long_break = "00:00:08"
+        sound = True
+    else:
+        print colored('Invalid input!','red')
+        print colored('Choosing default settings :','yellow')
+        tasks_length = "00:01:00"
+        task_time = "00:00:15"
+        short_break = "00:00:05"
+        long_break = "00:00:08"
         sound = True
 
     t = time.time()
