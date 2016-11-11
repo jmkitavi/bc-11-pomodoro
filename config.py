@@ -1,3 +1,4 @@
+from termcolor import colored
 # cycle time settings
 def set_time():
     td = raw_input("Enter time for cycles as HH:MM:SS or [Enter] to use default: >")
@@ -12,7 +13,7 @@ def set_time():
                 task_duration[i] = int(task_duration[i])
             return td
         except:
-            print "The Input wasn't Valid!"
+            print colored('The Input wasnt Valid!','red')
             set_time()
 # set_time()
 
@@ -31,7 +32,7 @@ def short_break_settings():
                 sb[i] = int(sb[i])
             return short_break
         except:
-            print "The Input wasn't Valid!"
+            print colored('The Input wasnt Valid!','red')
             short_break_settings()
 
 
@@ -49,7 +50,7 @@ def long_break_settings():
                 lb[i] = int(lb[i])
             return long_break
         except:
-            print "The Input wasn't Valid!"
+            print colored('The Input wasnt Valid!','red')
             long_break_settings()
 
 
@@ -69,7 +70,7 @@ def sound_settings():
             sound = True
             return sound
         else:
-            print "Wrong input"
+            print colored('The Input wasnt Valid!','red')
             sound_settings()
         return sound
 
@@ -88,5 +89,6 @@ def task_length_settings():
                 tl[i] = int(tl[i])
             return task_length
         except:
-            print "The Input wasn't Valid!"
+            print colored('The Input wasnt Valid!','red')
             task_length_settings()
+# task_length_settings()
