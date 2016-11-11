@@ -5,7 +5,6 @@ interactive command application.
 
 Usage:
     pomodoro start <task-title>
-    pomodoro time <HH:MM:SS>
     pomodoro list <date>
     pomodoro list_all
     pomodoro config short_break | long_break | sound
@@ -23,7 +22,7 @@ Note:
 """
 from new_task import new_task
 from sql_file import list_day, list_all, short_break_db, long_break_db, sound_db, delete_all_task
-from termcolor import cprint
+from termcolor import cprint, colored
 import sys
 import os
 import cmd
@@ -54,7 +53,7 @@ def docopt_cmd(func):
             # The DocoptExit is thrown when the args do not match.
             # We print a message to the user and the usage block.
 
-            print('Invalid Command!')
+            print colored('Invalid Command!','red')
             print(e)
             return
 
@@ -96,7 +95,8 @@ Options:
 
     def do_exit(self, arg):
         """Usage: exit"""
-        print('Good Bye!')
+        print colored('Good Bye!', 'red')
+        # print('Good Bye!')
         exit()
 
     @docopt_cmd
@@ -106,7 +106,7 @@ Options:
             new_task(arg['<task-title>'])
         except KeyboardInterrupt:
             pygame.quit()
-            print "\nTask complete"
+            print colored('\nTask complete', 'yellow')
             # print "\n"
 
     @docopt_cmd

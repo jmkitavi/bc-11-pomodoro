@@ -1,6 +1,7 @@
 # #!/usr/bin/env python
 import pygame
-
+import os
+from termcolor import colored
 
 # func to convert time to seconds
 def time_in_sec(time):
@@ -11,7 +12,7 @@ def time_in_sec(time):
         for i in [0, 1, 2]:
             total_time[i] = int(total_time[i])
     except:
-        print "The Input wasn't Valid!"
+        print colored('The Input wasnt Valid!','red')
         quit()
 
     # convert time to seconds
